@@ -14,4 +14,7 @@ public interface ManagerService {
 	public void logout_M(HttpServletResponse response) throws Exception;
 	
 	public ManagerDTO update_managerPage(ManagerDTO manager) throws Exception;
+	
+	public boolean withdrawal_manager(ManagerDTO manager, HttpServletResponse response) throws Exception;
+
 }

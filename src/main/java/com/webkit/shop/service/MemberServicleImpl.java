@@ -90,5 +90,22 @@ public class MemberServicleImpl implements MemberService {
 		return dao.login(member.getC_id());
 	}
 
+	// 회원탈퇴
+	@Override
+	public boolean withdrawal_member(MemberDTO member, HttpServletResponse response) throws Exception {
+		response.setContentType("text/html;charset=utf-8");
+		PrintWriter out = response.getWriter();
+		if(dao.withdrawal_member(member) != 1) {
+			out.println("<script>");
+			out.println("alert('회원탈퇴 실패');");
+			out.println("history.go(-1);");
+			out.println("</script>");
+			out.close();
+			return false;
+		}else {
+			return true;
+		}
+	}
+
 
 }

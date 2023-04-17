@@ -24,10 +24,6 @@
 						<input class="w3-input" type="text" id="c_id" name="c_id" readOnly value="${ member.c_id }"> 
 					</p>			
 					<p>
-						<label>비밀번호</label> 
-						<input class="w3-input" type="text" id="c_pass" name="c_pass" value="${ member.c_pass }"> 
-					</p>
-					<p>
 						<label>성명</label> 
 						<input class="w3-input" type="text" id="c_name" name="c_name" value="${ member.c_name }"> 
 					</p>
@@ -40,6 +36,24 @@
 					</p>
 				</form>
 			</div>
+			<br />
+			<div>
+				<form id="wdForm" action="./withdrawal_member" method="post">
+					<p>
+					<input class="w3-input" type="hidden" id="c_id" name="c_id" readOnly value="${ member.c_id }"> 
+						<label>비밀번호</label> 
+						<input class="w3-input" type="password" id="c_pass" name="c_pass" required> 
+					</p>			
+					<p class="w3-center">
+						<button type="submit" id="withdrawal" class="w3-button w3-block w3-black w3-ripple w3-margin-top w3-round">회원탈퇴</button>
+					</p>
+				</form>
+			</div>
+			<p class="w3-center">
+				<button type="button" onclick="location.href='/'"
+					class="w3-button w3-block w3-blue w3-ripple w3-margin-top w3-margin-bottom w3-round">돌아가기</button>
+			</p>
+			
 		</div>
 	</div>
 	
@@ -48,7 +62,12 @@
 		if(${msg ne null}){
 			alert('${msg}');
 		};
-	})
+	});
+	if($("#wdForm").submit(function(){
+		if(!confirm("정말 탈퇴하겠습니까?")){
+			return false;
+		}
+	}));
 </script>
 
 	

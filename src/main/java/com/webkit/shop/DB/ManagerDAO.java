@@ -30,5 +30,10 @@ public class ManagerDAO {
 	public int update_managerPage(ManagerDTO manager) throws Exception{
 		return session.update("manager.update_managerPage", manager);
 	}
+	
+	@Transactional
+	public int withdrawal_manager(ManagerDTO manager) throws Exception{
+		return session.delete("manager.withdrawal_manager", manager);
+	}
 
 }

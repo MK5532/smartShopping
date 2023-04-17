@@ -86,4 +86,19 @@ public class ManagerServiceImpl implements ManagerService {
 		return dao.login_M(manager.getM_id());
 	}
 
+	@Override
+	public boolean withdrawal_manager(ManagerDTO manager, HttpServletResponse response) throws Exception{
+		response.setContentType("text/html;charset=utf-8");
+		PrintWriter out = response.getWriter();
+		if(dao.withdrawal_manager(manager) != 1) {
+			out.println("<script>");
+			out.println("alert('회원탈퇴 실패');");
+			out.println("history.go(-1);");
+			out.println("</script>");
+			out.close();
+			return false;
+		}else {
+			return true;
+		}
+	}
 }

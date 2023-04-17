@@ -20,8 +20,13 @@
 	
 	<!-- 회원정보 수정 -->
 	<update id="update_memberPage" parameterType="member">
-		update S_member set C_pass = #{C_pass}, C_name = #{C_name}, C_phone = #{C_phone} where C_id = #{C_id}
+		update S_member set C_name = #{C_name}, C_phone = #{C_phone} where C_id = #{C_id}
 	</update>
+
+	<!-- 회원탈퇴 -->
+	<delete id="withdrawal_member" parameterType="member">
+		delete from S_member where C_id = #{C_id} and C_pass = #{C_pass}
+	</delete>
 
 	
 </mapper>

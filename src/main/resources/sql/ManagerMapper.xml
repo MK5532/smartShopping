@@ -19,7 +19,12 @@
 	
 	<!-- 점주정보 수정 -->
 	<update id="update_managerPage" parameterType="manager">
-		update S_manager set M_pass = #{M_pass}, M_name = #{M_name}, M_phone = #{M_phone}, M_corp = #{M_corp} where M_id = #{M_id}
+		update S_manager set M_name = #{M_name}, M_phone = #{M_phone}, M_corp = #{M_corp} where M_id = #{M_id}
 	</update>
+	
+	<!-- 점주탈퇴 -->
+	<delete id="withdrawal_manager" parameterType="manager">
+		delete from S_manager where M_id = #{M_id} and M_pass = #{M_pass}
+	</delete>
 	
 </mapper>

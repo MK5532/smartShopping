@@ -24,10 +24,6 @@
 						<input class="w3-input" type="text" id="m_id" name="m_id" readOnly value="${ manager.m_id }"> 
 					</p>			
 					<p>
-						<label>비밀번호</label> 
-						<input class="w3-input" type="text" id="m_pass" name="m_pass" value="${ manager.m_pass }"> 
-					</p>
-					<p>
 						<label>성명</label> 
 						<input class="w3-input" type="text" id="m_name" name="m_name" value="${ manager.m_name }"> 
 					</p>
@@ -43,6 +39,23 @@
 						<button type="submit" class="w3-button w3-block w3-black w3-ripple w3-margin-top w3-round">회원정보 변경</button>
 					</p>
 				</form>
+							<div>
+				<form id="wdForm" action="./withdrawal_manager" method="post">
+					<p>
+					<input class="w3-input" type="hidden" id="m_id" name="m_id" readOnly value="${ manager.m_id }"> 
+						<label>비밀번호</label> 
+						<input class="w3-input" type="password" id="m_pass" name="m_pass" required> 
+					</p>			
+					<p class="w3-center">
+						<button type="submit" id="withdrawal" class="w3-button w3-block w3-black w3-ripple w3-margin-top w3-round">회원탈퇴</button>
+					</p>
+				</form>
+			</div>
+			<p class="w3-center">
+				<button type="button" onclick="location.href='/'"
+					class="w3-button w3-block w3-blue w3-ripple w3-margin-top w3-margin-bottom w3-round">돌아가기</button>
+			</p>
+				
 			</div>
 		</div>
 	</div>
@@ -53,6 +66,12 @@
 			alert('${msg}');
 		};
 	})
+	if($("#wdForm").submit(function(){
+		if(!confirm("정말 탈퇴하겠습니까?")){
+			return false;
+		}
+	}));
+
 </script>
 
 	

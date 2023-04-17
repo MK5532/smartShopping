@@ -31,4 +31,9 @@ public class MemberDAO {
 	public int update_memberPage(MemberDTO member) throws Exception{
 		return session.update("member.update_memberPage", member);
 	}
+	
+	@Transactional
+	public int withdrawal_member(MemberDTO member) throws Exception{
+		return session.delete("member.withdrawal_member", member);
+	}
 }
