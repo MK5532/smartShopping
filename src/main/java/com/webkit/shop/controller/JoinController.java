@@ -22,10 +22,10 @@ import com.webkit.shop.service.ManagerService;;
 public class JoinController {
 	
     @Inject
-    private MemberService MemberService;
+    private MemberService memberService;
     
     @Inject
-    private ManagerService ManagerService;
+    private ManagerService managerService;
 
 	@GetMapping("/memberjoin")
 	public String memberJoinGet(){
@@ -40,51 +40,51 @@ public class JoinController {
 	@PostMapping("/memberjoin")
 	public String memberJoinPost(MemberDTO member, RedirectAttributes rttr, HttpServletResponse response) throws Exception
 	{
-		rttr.addFlashAttribute("result", MemberService.memberJoin(member, response));
+		rttr.addFlashAttribute("result", memberService.memberJoin(member, response));
 		return "/join/joinComplete";
 	}
 	
 	@PostMapping("/managerjoin")
 	public String managerJoinPost(ManagerDTO manager, RedirectAttributes rttr, HttpServletResponse response) throws Exception
 	{
-		rttr.addFlashAttribute("result", ManagerService.managerJoin(manager, response));
+		rttr.addFlashAttribute("result", managerService.managerJoin(manager, response));
 		return "/join/joinComplete";
 	}
 
     @PostMapping("/memeber/check_id.do")
 	public void check_id(@RequestParam("C_id") String id, HttpServletResponse response) throws Exception{
-    	MemberService.check_id(id, response);
+    	memberService.check_id(id, response);
 	}
     
     @PostMapping("/manager/check_id.do")
 	public void check_Mid(@RequestParam("M_id") String id, HttpServletResponse response) throws Exception{
-    	ManagerService.check_Mid(id, response);
+    	managerService.check_Mid(id, response);
 	}
 
     @PostMapping("/login")
 	public String login(@ModelAttribute MemberDTO member, HttpSession session, HttpServletResponse response) throws Exception{
-		member = MemberService.login(member, response);
+		member = memberService.login(member, response);
 		session.setAttribute("member", member);
-		return "main";
+		return "/shop/main";
 	}
 	
     @PostMapping("/login_M")
 	public String login_M(@ModelAttribute ManagerDTO manager, HttpSession session, HttpServletResponse response) throws Exception{
-    	manager = ManagerService.login_M(manager, response);
+    	manager = managerService.login_M(manager, response);
 		session.setAttribute("manager", manager);
-		return "mainM";
+		return "/shop/mainM";
 	}
     
     @GetMapping("/logout")
 	public void logout(HttpSession session, HttpServletResponse response) throws Exception{
 		session.invalidate();
-		MemberService.logout(response);
+		memberService.logout(response);
 	}
 
     @GetMapping("/logout_M")
 	public void logout_M(HttpSession session, HttpServletResponse response) throws Exception{
 		session.invalidate();
-		ManagerService.logout_M(response);
+		managerService.logout_M(response);
 	}
 
 }

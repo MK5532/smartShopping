@@ -24,9 +24,8 @@ nav {
 				<h3>스마트 쇼핑몰 메인화면</h3>
 			</div>
 			<nav id="tab-button-nav">
-				<div class="btn-group">
-					<button type="button" class="btn btn-info tab-button"
-						>마이페이지</button>
+				<div class="group">
+					<div class="btn btn-info tab-button"><a href="../shop/memberPage">마이페이지(${member.c_id})</a></div>
 					<button type="button" class="btn btn-info tab-button"
 						 onclick="location.href='./logout'">로그아웃</button>
 				</div>

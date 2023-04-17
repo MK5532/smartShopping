@@ -82,4 +82,13 @@ public class MemberServicleImpl implements MemberService {
 		out.println("</script>");
 		out.close();
 	}
+	
+	// 회원정보 수정
+	@Override
+	public MemberDTO update_memberPage(MemberDTO member) throws Exception {
+		dao.update_memberPage(member);
+		return dao.login(member.getC_id());
+	}
+
+
 }

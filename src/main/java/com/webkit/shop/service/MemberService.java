@@ -14,4 +14,5 @@ public interface MemberService {
 	
 	public void logout(HttpServletResponse response) throws Exception;
 
+	public MemberDTO update_memberPage(MemberDTO member) throws Exception;
 }

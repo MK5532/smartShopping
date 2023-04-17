@@ -12,5 +12,4 @@ public interface ManagerService {
 	public ManagerDTO login_M(ManagerDTO manager, HttpServletResponse response) throws Exception;
 	
 	public void logout_M(HttpServletResponse response) throws Exception;
-
 }
