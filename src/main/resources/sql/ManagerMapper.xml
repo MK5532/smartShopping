@@ -1,16 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="manager">
+
 	<!-- 점주 회원 가입 -->
 	 <insert id="managerJoin">
   		insert into S_manager values(#{M_id}, #{M_pass}, #{M_name}, #{M_phone}, #{M_corp})
   	</insert>	
+  	
   	<!-- 점주 아이디 중복 검사 -->
 	<select id="check_Mid" parameterType="String" resultType="int">
 		select count(*) from S_manager where M_id = #{M_id}
 	</select>  	
+	
 	<!-- 점주 로그인 -->
 	<select id="login_M" parameterType="String" resultType="manager">
 		select * from S_manager where M_id = #{M_id}
 	</select>
+	
+	<!-- 점주정보 수정 -->
+	<update id="update_managerPage" parameterType="manager">
+		update S_manager set M_pass = #{M_pass}, M_name = #{M_name}, M_phone = #{M_phone}, M_corp = #{M_corp} where M_id = #{M_id}
+	</update>
+	
 </mapper>

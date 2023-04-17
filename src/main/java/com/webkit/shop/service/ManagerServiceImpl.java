@@ -80,4 +80,10 @@ public class ManagerServiceImpl implements ManagerService {
 		out.close();
 	}
 
+	@Override
+	public ManagerDTO update_managerPage(ManagerDTO manager) throws Exception{
+		dao.update_managerPage(manager);
+		return dao.login_M(manager.getM_id());
+	}
+
 }

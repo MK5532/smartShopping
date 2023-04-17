@@ -25,8 +25,7 @@ nav {
 			</div>
 			<nav id="tab-button-nav">
 				<div class="btn-group">
-					<button type="button" class="btn btn-info tab-button"
-						>마이페이지</button>
+					<div class="btn btn-info tab-button"><a href="../shop/managerPage">마이페이지(${manager.m_id})</a></div>
 					<button type="button" class="btn btn-info tab-button"
 						 onclick="location.href='./logout_M'">로그아웃</button>
 				</div>

@@ -18,22 +18,26 @@
 				<h3>마이페이지</h3>
 			</div>
 			<div>
-				<form id="myForm" action="./update_memberPage" method="post">
+				<form id="myForm" action="./update_managerPage" method="post">
 					<p>
 						<label>아이디</label> 
-						<input class="w3-input" type="text" id="c_id" name="c_id" readOnly value="${ member.c_id }"> 
+						<input class="w3-input" type="text" id="m_id" name="m_id" readOnly value="${ manager.m_id }"> 
 					</p>			
 					<p>
 						<label>비밀번호</label> 
-						<input class="w3-input" type="text" id="c_pass" name="c_pass" value="${ member.c_pass }"> 
+						<input class="w3-input" type="text" id="m_pass" name="m_pass" value="${ manager.m_pass }"> 
 					</p>
 					<p>
 						<label>성명</label> 
-						<input class="w3-input" type="text" id="c_name" name="c_name" value="${ member.c_name }"> 
+						<input class="w3-input" type="text" id="m_name" name="m_name" value="${ manager.m_name }"> 
 					</p>
 					<p>
 						<label>연락처</label> 
-						<input class="w3-input" type="text" id="c_phone" name="c_phone" value="${ member.c_phone }"> 
+						<input class="w3-input" type="text" id="m_phone" name="m_phone" value="${ manager.m_phone }"> 
+					</p>
+					<p>
+						<label>상호</label> 
+						<input class="w3-input" type="text" id="m_corp" name="m_corp" value="${ manager.m_corp }"> 
 					</p>
 					<p class="w3-center">
 						<button type="submit" class="w3-button w3-block w3-black w3-ripple w3-margin-top w3-round">회원정보 변경</button>

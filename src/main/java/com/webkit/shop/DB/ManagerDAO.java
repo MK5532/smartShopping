@@ -5,6 +5,7 @@ import javax.inject.Inject;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 @Repository
 public class ManagerDAO {
@@ -23,6 +24,11 @@ public class ManagerDAO {
 
 	public ManagerDTO login_M(String id) {
 		return session.selectOne("manager.login_M", id);
+	}
+
+	@Transactional
+	public int update_managerPage(ManagerDTO manager) throws Exception{
+		return session.update("manager.update_managerPage", manager);
 	}
 
 }
