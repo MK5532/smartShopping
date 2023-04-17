@@ -52,7 +52,7 @@
 				</form>
 			</div>
 			<p class="w3-center">
-				<button type="button" onclick="location.href='/'"
+				<button type="button" onclick="history.go(-1);"
 					class="w3-button w3-block w3-blue w3-ripple w3-margin-top w3-margin-bottom w3-round">돌아가기</button>
 			</p>
 				

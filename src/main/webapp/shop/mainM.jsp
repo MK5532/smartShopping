@@ -30,6 +30,11 @@ nav {
 						 onclick="location.href='./logout_M'">로그아웃</button>
 				</div>
 			</nav>
+			<p class="w3-center">
+				<button type="submit" id="join_button"  onclick="location.href='../shop/product_InsertForm'"
+					class="w3-button w3-block w3-black w3-ripple w3-margin-top w3-round">상품 추가</button>
+			</p>
+			
 		</div>
 	</div>
 </body>
