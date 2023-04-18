@@ -47,6 +47,7 @@ nav {
 							<td>
 							<form method="post" action="../cart/insert">
 								<input type="hidden" name="product_id" value="${list.product_id}">
+								<input type="hidden" name="c_id" value="${member.c_id}">
 								<select name="amount">
 									<c:forEach begin="1" end="10" var="i">
 										<option value="${i}">${i}</option>

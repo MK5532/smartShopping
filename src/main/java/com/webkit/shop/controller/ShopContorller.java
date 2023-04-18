@@ -29,7 +29,6 @@ public class ShopContorller {
 	@GetMapping("/detail")
 	public String productDetail(@ModelAttribute ProductDTO product, Model model) throws Exception{
 		ProductDTO productDetail = productService.selectProductDetail(product);
-		System.out.println(productService.selectProductDetail(product));
 		model.addAttribute("product", productDetail);
 		return "/shop/detail";
 	}
