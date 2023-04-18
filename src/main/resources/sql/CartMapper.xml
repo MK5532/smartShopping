@@ -6,8 +6,17 @@
 		insert into s_cart( Cart_id, C_id, Product_id, amount, flag) 
 		values(#{Cart_id}, #{C_id}, #{Product_id}, #{amount}, #{flag})
 	</insert>
+	
 	<!-- 장바구니 확인 -->
-
+	<select id="listCart" resultType="cart">
+		select c.Cart_id as Cart_id, c.C_id as C_id, p.Product_id as Product_id, p.P_name as P_name,
+		p.P_price as P_price, amount, (P_price * amount) Cart_money, flag
+		from s_cart c, s_product p, s_member m 
+		where m.C_id = c.C_id and p.Product_id = c.Product_id and c.C_id = #{C_id}
+	</select>
+	
+	<!-- 장바구니 총액 -->
+	
 	<!-- 장바구니 삭제 -->
 
 	<!-- 장바구니 결제 (flag 수정) -->

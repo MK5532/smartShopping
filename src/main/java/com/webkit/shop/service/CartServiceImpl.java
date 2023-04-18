@@ -1,5 +1,7 @@
 package com.webkit.shop.service;
 
+import java.util.List;
+
 import javax.inject.Inject;
 
 import org.springframework.stereotype.Service;
@@ -18,4 +20,8 @@ public class CartServiceImpl implements CartService {
 		return dao.insertCart(cart);
 	}
 
+	@Override
+	public List<CartDTO> listCart(CartDTO cart, String C_id) throws Exception{
+		return dao.listCart(cart, C_id);
+	}
 }

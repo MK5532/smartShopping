@@ -13,7 +13,8 @@ public class CartDTO {
 	private int Cart_id;
 	private String C_id;
 	private int Product_id;
-	private int Product_price;
+	private String P_name;
+	private int P_price;
 	private int amount;
 	private int Cart_money;
 	private boolean flag;

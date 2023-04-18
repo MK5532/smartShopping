@@ -3,8 +3,8 @@
 <mapper namespace="product">
 	<!-- 물품 넣기 -->
 	 <insert id="product_Insert" useGeneratedKeys="true" keyProperty="Product_id">
-  		insert into S_product(P_name, P_price, P_stock, P_expl, P_corp) 
-  		values(#{P_name}, #{P_price}, #{P_stock}, #{P_expl}, #{P_corp})
+  		insert into S_product(P_name, P_price, P_stock, P_expl, M_id) 
+  		values(#{P_name}, #{P_price}, #{P_stock}, #{P_expl}, #{M_id})
   	</insert>	
   	
 	<!-- 상품 화면 물품 표시 --> 
@@ -14,7 +14,8 @@
 	
 	<!-- 물품 상세 표시 --> 
 	<select id="selectProductDetail" resultType="product">
-		select P_name, P_price, P_stock, P_expl, P_corp from s_product where Product_id = #{product_id}
+		select P_name, P_price, P_stock, P_expl, m.M_corp AS corp from s_product s, s_manager m
+		 where Product_id = #{product_id} AND m.M_id = s.M_id
 	</select>
 	
 </mapper>

@@ -52,13 +52,13 @@ nav {
 					<tr>
 						<th>소유 쇼핑몰</th>
 						<td>
-						${product.p_corp}
+						${product.corp}
 						</td>
 					</tr>
 				</tbody>
 			</table>
 			<p class="w3-center">
-				<button type="button" onclick="location.href='../main/main'"
+				<button type="button" onclick="history.go(-1);"
 					class="w3-button w3-block w3-blue w3-ripple w3-margin-top w3-margin-bottom w3-round">돌아가기</button>
 			</p>
 			
