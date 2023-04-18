@@ -1,5 +1,7 @@
 package com.webkit.shop.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -18,4 +20,13 @@ public class ProductServiceImpl implements ProductService {
 		return dao.product_Insert(product);
 	}
 
+	@Override
+	public List<ProductDTO> selectProduct(ProductDTO product) throws Exception{
+		return dao.selectProduct(product);
+	}
+	
+	@Override
+	public ProductDTO selectProductDetail(ProductDTO product) throws Exception{
+		return dao.selectProductDetail(product);
+	}
 }

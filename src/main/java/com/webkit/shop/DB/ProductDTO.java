@@ -15,6 +15,6 @@ public class ProductDTO {
     private int P_price;
     private int P_stock;
     private String P_expl;
-    private String M_id;
+    private String P_corp;
 
 }

@@ -65,14 +65,14 @@ public class JoinController {
 	public String login(@ModelAttribute MemberDTO member, HttpSession session, HttpServletResponse response) throws Exception{
 		member = memberService.login(member, response);
 		session.setAttribute("member", member);
-		return "/shop/main";
+		return "/main/main";
 	}
 	
     @PostMapping("/login_M")
 	public String login_M(@ModelAttribute ManagerDTO manager, HttpSession session, HttpServletResponse response) throws Exception{
     	manager = managerService.login_M(manager, response);
 		session.setAttribute("manager", manager);
-		return "/shop/mainM";
+		return "/main/main";
 	}
     
     @GetMapping("/logout")

@@ -9,6 +9,13 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <meta charset="UTF-8">
 <title>상품 추가하기</title>
+<style>
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+</style>
 </head>
 <body>
 	<div class="w3-content w3-container w3-margin-top">
@@ -17,7 +24,7 @@
 				<h3>상품 추가하기</h3>
 			</div>
 			<div>
-				<form id="joinForm" action="./product_Insert" method="post">
+				<form action="./product_Insert" method="post">
 					<p>
 						<label>이름</label> <input name="P_name" id="P_name" class="w3-input"
 							required> <span id="id_check" class="w3-text-red"></span>
@@ -35,12 +42,7 @@
 							class="w3-input" required>
 					</p>
 					<p>
-					<input name="m_id" id="m_id" type="hidden"
-							class="w3-input" value="${ manager.m_id }">
-					</p>
-					
-					<p>
-						<label>쇼핑몰 상호</label> <input name="M_corp" id="M_corp"
+						<label>쇼핑몰 상호</label> <input name="P_corp" id="P_corp"
 							class="w3-input" value="${ manager.m_corp }" readOnly>
 					</p>
 					<p class="w3-center">
