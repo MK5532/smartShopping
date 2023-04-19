@@ -7,6 +7,9 @@
 <title>메뉴</title>
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
 <style>
 nav {
 	margin-bottom: 10px;

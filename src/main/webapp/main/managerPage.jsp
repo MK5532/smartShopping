@@ -52,6 +52,10 @@
 				</form>
 			</div>
 			<p class="w3-center">
+				<button type="button"  onclick="location.href='../pay/payListM'"
+					class="w3-button w3-block w3-blue w3-ripple w3-margin-top w3-margin-bottom w3-round">결제 이력 확인</button>
+			</p>
+			<p class="w3-center">
 				<button type="button" onclick="location.href='../main/main'"
 					class="w3-button w3-block w3-blue w3-ripple w3-margin-top w3-margin-bottom w3-round">돌아가기</button>
 			</p>

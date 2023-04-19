@@ -1,6 +1,6 @@
 package com.webkit.shop.DB;
 
-import java.sql.Date;
+import java.time.LocalDateTime;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -14,5 +14,6 @@ import lombok.NoArgsConstructor;
 public class PaymentDTO {
 	private int Pay_id;
 	private String C_id;
-	private Date Pay_date;
+	private LocalDateTime Pay_date;
+	private int total;
 }

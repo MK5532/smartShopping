@@ -24,13 +24,5 @@
 	<update id="cartPay">
 		update s_cart set flag = 1 where C_id = #{C_id}
 	</update>
-	
-	<!-- 장바구니 된 것의 정보만 출력 -->
-	<select id="listCart" resultType="cart">
-		select c.Cart_id as Cart_id, c.C_id as C_id, p.Product_id as Product_id, p.P_name as P_name,
-		p.P_price as P_price, amount, (P_price * amount) Cart_money, flag
-		from s_cart c, s_product p, s_member m, s_payment pay
-		where m.C_id = c.C_id and p.Product_id = c.Product_id and c.C_id = m.C_id and flag = 1 and pay.Pay_id = #{Pay_id}
-	</select>
-	
+		
 </mapper>

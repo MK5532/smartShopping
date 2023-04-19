@@ -3,8 +3,16 @@
 <mapper namespace="payment">
 	<!-- 결제 추가 -->
 	<insert id="insertPay">
-		insert into s_payment( Pay_id, C_id, Pay_date) 
-		values(#{Pay_id}, #{C_id}, #{Pay_date})
+		insert into s_payment( C_id, total ) 
+		values(#{C_id}, #{total})
 	</insert>
-
+	<!-- 결제 이력 확인 -->
+	<select id="listPayment" resultType="payment">
+		select Pay_id, C_id, Pay_date, total from S_payment where C_id = #{C_id}
+	</select>
+	<!-- 점장 결제 이력 확인 -->
+	<select id="listPaymentM" resultType="payment">
+		select Pay_id, C_id, Pay_date, total from S_payment
+	</select>
+	
 </mapper>

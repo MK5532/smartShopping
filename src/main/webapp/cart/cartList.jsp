@@ -6,8 +6,6 @@
 <head>
 <meta charset="UTF-8">
 <title>장바구니 목록</title>
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 </head>
 <body>
 	<div class="w3-content w3-container w3-margin-top">
@@ -47,9 +45,12 @@
 							결제 예정 금액  :<fmt:formatNumber value="${total}" pattern="#,###"/>원 
 						</td>
 						<td colspan="1">
-								<input type="submit" onclick="location.href='./cartPay'"
-									class="btn btn-danger tab-button"
+							<form method="post" action="./cartPay">
+							<input type="hidden" name="c_id" value="${member.c_id}">
+							<input type="hidden" name="total" value="${total}">
+							<input type="submit" class="btn btn-danger tab-button"
 									value="결제하기">
+							</form>
 						</td>
 					</tr>
 				</tbody>
