@@ -9,6 +9,7 @@
 		<typeAlias alias="manager" type="com.webkit.shop.DB.ManagerDTO"/>
 		<typeAlias alias="product" type="com.webkit.shop.DB.ProductDTO"/>
 		<typeAlias alias="cart" type="com.webkit.shop.DB.CartDTO"/>
+		<typeAlias alias="payment" type="com.webkit.shop.DB.PaymentDTO"/>
 	</typeAliases>
 </configuration>
 

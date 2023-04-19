@@ -42,6 +42,9 @@ input[type="number"]::-webkit-inner-spin-button {
 							class="w3-input" required>
 					</p>
 					<p>
+						<input type="hidden" name="M_id" value="${ manager.m_id }">
+					</p>
+					<p>
 						<label>쇼핑몰 상호</label> <input name="P_corp" id="P_corp"
 							class="w3-input" value="${ manager.m_corp }" readOnly>
 					</p>

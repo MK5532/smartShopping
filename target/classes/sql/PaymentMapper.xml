@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="payment">
+	<!-- 결제 추가 -->
+	<insert id="insertPay">
+		insert into s_payment( Pay_id, C_id, Pay_date) 
+		values(#{Pay_id}, #{C_id}, #{Pay_date})
+	</insert>
+
+</mapper>

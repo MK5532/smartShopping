@@ -39,9 +39,15 @@ nav {
 					</tr>
 					<tr>
 						<th>수량</th>
-						<td>
-						${product.p_stock}
-						</td>
+						<c:choose>
+								<c:when test="${product.p_stock==0}">
+									<td><span style="color:red">품절</span></td>
+								</c:when>
+								<c:otherwise>
+									<td>${product.p_stock}개</td>
+								</c:otherwise>
+						</c:choose>
+						
 					</tr>
 					<tr>
 						<th>설명</th>

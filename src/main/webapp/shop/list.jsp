@@ -43,11 +43,25 @@ nav {
 							<td>${list.product_id}</td>
 							<td><a href="./detail?product_id=${list.product_id}" >${list.p_name}</a></td>
 							<td><fmt:formatNumber value="${list.p_price}" pattern="#,###"/>원</td>
-							<td>${list.p_stock}개</td>
+							<c:choose>
+								<c:when test="${list.p_stock==0}">
+									<td><span style="color:red">품절</span></td>
+								</c:when>
+								<c:otherwise>
+									<td>${list.p_stock}개</td>
+								</c:otherwise>
+							</c:choose>
 							<td>
 							<form method="post" action="../cart/insert">
 								<input type="hidden" name="product_id" value="${list.product_id}">
 								<input type="hidden" name="c_id" value="${member.c_id}">
+								<c:choose>
+								<c:when test="${list.p_stock==0}">
+									<input disabled
+									class="btn btn-danger tab-button"
+									value="장바구니에 담을 수 없습니다">
+								</c:when>
+								<c:otherwise>
 								<select name="amount">
 									<c:forEach begin="1" end="10" var="i">
 										<option value="${i}">${i}</option>
@@ -56,6 +70,8 @@ nav {
 								<input type="submit"
 									class="btn btn-info tab-button"
 									value="장바구니에 담기">
+								</c:otherwise>
+								</c:choose>
 							</form>								
 							</td>
 						</tr>
@@ -76,10 +92,17 @@ nav {
 				<tbody>
 					<c:forEach items="${Productlist}" var="list">
 						<tr>
-							<td><a href="./detail?product_id=${list.product_id}" >${list.p_name}</a></td>
+							<td><a href="./detail?product_id=${list.product_id}" >${list.product_id}</a></td>
 							<td>${list.p_name}</td>
 							<td><fmt:formatNumber value="${list.p_price}" pattern="#,###"/>원</td>
-							<td>${list.p_stock}개</td>
+							<c:choose>
+								<c:when test="${list.p_stock==0}">
+									<td><span style="color:red">품절</span></td>
+								</c:when>
+								<c:otherwise>
+									<td>${list.p_stock}개</td>
+								</c:otherwise>
+							</c:choose>
 						</tr>
 					</c:forEach>
 				</tbody>

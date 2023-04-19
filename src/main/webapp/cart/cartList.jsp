@@ -35,7 +35,7 @@
 							<td>${list.amount}개</td>
 							<td><fmt:formatNumber value="${list.cart_money}" pattern="#,###"/>원</td>
 							<td>
-								<input type="submit"
+								<input type="submit" onclick="location.href='./cartDelete?Cart_id=${list.cart_id}'"
 									class="btn btn-info tab-button"
 									value="장바구니에서 빼기">
 							</td>
@@ -47,7 +47,7 @@
 							결제 예정 금액  :<fmt:formatNumber value="${total}" pattern="#,###"/>원 
 						</td>
 						<td colspan="1">
-								<input type="submit"
+								<input type="submit" onclick="location.href='./cartPay'"
 									class="btn btn-danger tab-button"
 									value="결제하기">
 						</td>

@@ -21,7 +21,17 @@ public class CartServiceImpl implements CartService {
 	}
 
 	@Override
-	public List<CartDTO> listCart(CartDTO cart, String C_id) throws Exception{
-		return dao.listCart(cart, C_id);
+	public List<CartDTO> listCart(String C_id) throws Exception{
+		return dao.listCart(C_id);
+	}
+	
+	@Override
+	public int deleteCart(int Cart_id) throws Exception{
+		return dao.deleteCart(Cart_id);
+	}
+	
+	@Override
+	public int cartPay(String C_id) throws Exception{
+		return dao.cartPay(C_id);
 	}
 }
