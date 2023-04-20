@@ -51,7 +51,7 @@
 						<tr>
 							<td>${list.pay_id}</td>
 							<td>${list.c_id}</td>
-							<fmt:parseDate value="${list.pay_date}" pattern="yyyy-MM-dd'T'HH:mm" var="parseTime" type="both"/>
+							<fmt:parseDate value="${list.pay_date}" pattern="yyyy-MM-dd'T'HH:mm:ss" var="parseTime" type="both"/>
 							<td><fmt:formatDate value="${parseTime}" pattern="yyyy.MM.dd HH:mm:ss"/></td>
 							<td><fmt:formatNumber value="${list.total}" pattern="#,###"/>원</td>
 						</tr>

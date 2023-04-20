@@ -15,6 +15,9 @@
 			</div>
 			<%@ include file="../menu.jsp" %>
 			<c:set var = "total" value = "0" />
+		<c:choose>
+	      <c:when test="${not empty cartList}" >
+			
 			<table class="w3-table w3-striped w3-centered">
 				<thead>
 					<tr>
@@ -55,6 +58,14 @@
 					</tr>
 				</tbody>
 			</table>
+			</c:when>
+			<c:otherwise>
+				<div  class="w3-container w3-center">
+					<h4>장바구니에 물건이 없습니다 !</h4>
+				</div>
+			</c:otherwise>
+			</c:choose>
+			
 			<p class="w3-center">
 				<button type="button" onclick="location.href='../shop/list'"
 					class="w3-button w3-block w3-blue w3-ripple w3-margin-top w3-margin-bottom w3-round">돌아가기</button>

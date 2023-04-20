@@ -89,8 +89,8 @@ nav {
 				<tbody>
 					<c:forEach items="${Productlist}" var="list">
 						<tr>
-							<td><a href="./detail?product_id=${list.product_id}" >${list.product_id}</a></td>
-							<td>${list.p_name}</td>
+							<td>${list.product_id}</td>
+							<td><a href="./detail?product_id=${list.product_id}" >${list.p_name}</a></td>
 							<td><fmt:formatNumber value="${list.p_price}" pattern="#,###"/>원</td>
 							<c:choose>
 								<c:when test="${list.p_stock==0}">
